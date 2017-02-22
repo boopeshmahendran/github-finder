@@ -9,14 +9,13 @@ import { User } from '../user';
   providers: [ GithubService ]
 })
 export class SearchComponent {
-  private users[]: User; 
+  private users: User[]; 
   constructor(private githubService: GithubService) {
   }
   searchUsers(username: string) {
       this.githubService.getUsers(username)
                         .subscribe(res => {
                               this.users = res.items;
-                              console.log(res);
                          })
   }
 }
