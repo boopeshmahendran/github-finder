@@ -1,0 +1,8 @@
+<div *ngIf='user'>
+    <img class='avatar-image' src='{{user.avatar_url}}'>
+    <h3 *ngIf='user.name'><a href='{{user.html_url}}' target="_blank">{{user.name}}</a></h3>
+    <h4 *ngIf='user.company'>{{user.company}}</h4>
+    <h4 *ngIf='user.location'><span class='text-info'>Location:</span> {{user.location}}</h4>
+    <button class='btn btn-success'>Followers <span class="badge">{{user.followers}}</span></button>
+    <button class='btn btn-primary'>Following <span class="badge">{{user.following}}</span></button>
+</div>
