@@ -1,3 +1,11 @@
 <div class="form-group">
-    <input type="text" class="form-control">
+    <input type="text" class="form-control" placeholder="Search Github Profiles" (keyup)="searchUsers($event.target.value)">
+</div>
+<div *ngIf="users">
+    <div *ngFor="let user of users">
+        <div class="user well">
+            <img class='avatar-image' src="{{user.avatar_url}}" alt="">
+            <h3><a href='{{user.html_url}}'>{{user.login}}</a></h3>
+        </div>
+    </div>
 </div>

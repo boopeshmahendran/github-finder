@@ -1,0 +1,8 @@
+.user {
+    min-height: 100px;
+}
+.avatar-image {
+    max-width: 75px;
+    margin-right: 20px;
+    float: left;
+}
