@@ -6,6 +6,7 @@ import 'rxjs/add/operator/map';
 export class GithubService {
   private baseUrl: string = 'https://api.github.com/';
   private usersUrl: string = this.baseUrl + 'search/users';
+  private userUrl: string = this.baseUrl + 'users/';
   private authParams: URLSearchParams = new URLSearchParams();
   
   constructor(private http: Http) {
@@ -15,6 +16,11 @@ export class GithubService {
 
   getUsers(username: string) {
       return this.http.get(this.usersUrl + '?q=' + username, {search: this.authParams})
+                      .map(res => res.json());
+  }
+
+  getUser(login: string) {
+      return this.http.get(this.userUrl + login, {search: this.authParams})
                       .map(res => res.json());
   }
 
