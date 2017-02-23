@@ -5,7 +5,7 @@
     <div *ngFor="let user of users">
         <div class="user well">
             <img class='avatar-image' src="{{user.avatar_url}}" alt="">
-            <h3><a routerLink='/profile/{{user.login}}'>{{user.login}}</a></h3>
+            <h3><a routerLink='/profile/{{user.login}}' target="_blank">{{user.login}}</a></h3>
         </div>
     </div>
 </div>
