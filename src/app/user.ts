@@ -7,4 +7,5 @@ export class User {
     followers: number;
     following: number;
     location: string;
+    public_repos: number;
 }
